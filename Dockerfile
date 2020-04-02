@@ -8,9 +8,9 @@ RUN apt-get install -y pandoc
 RUN apt-get install -y nano
 RUN apt-get install -y git
 RUN useradd -rm -d /home/phys phys
-RUN cd /home/phys && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git
-RUN cp /home/phys/ManualLayout/compile /usr/local/bin
-RUN chmod +x /usr/local/bin/compile
+RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git
+RUN chmod +x /opt/ManualLayout/compile
 USER phys
 WORKDIR /home/phys
+RUN echo "export PATH=/opt/ManualLayout:$PATH" > ~/.bashrc
 CMD ["/bin/bash"]
