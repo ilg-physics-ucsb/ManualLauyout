@@ -9,7 +9,8 @@ RUN apt-get install -y nano
 RUN apt-get install -y git
 RUN useradd -rm -d /home/phys phys
 RUN cd /home/phys && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git
-RUN cp /home/phys/ManualLayout/compile /usr/bin
+RUN cp /home/phys/ManualLayout/compile /usr/local/bin
+RUN chmod +x /usr/local/bin/compile
 USER phys
 WORKDIR /home/phys
 CMD ["/bin/bash"]
