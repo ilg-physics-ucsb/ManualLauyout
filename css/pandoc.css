@@ -2,6 +2,21 @@
  * I add this to html files generated with pandoc.
  */
 
+ .resp-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 div.Question {
   font-size: 14pt;
   background: #047C91;

@@ -10,7 +10,9 @@ def action(elem, doc):
         file_id = gvideo.content[0].content[0].text
         video = """
         <figure>
-        <iframe width="90vw" height="70vw" src="https://drive.google.com/file/d/{0}/preview"></iframe>
+        <div class=resp-container">
+        <iframe class="resp-iframe" width="100%" height="100%" src="https://drive.google.com/file/d/{0}/preview"></iframe>
+        </div>
         <figcaption>Video {1}
         </figure>
         """.format(file_id, doc.latest_video)
