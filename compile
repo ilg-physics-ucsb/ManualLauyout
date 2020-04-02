@@ -1,4 +1,4 @@
 #!/bin/bash
-pandoc -s -f markdown+smart+fenced_divs -t html5 -c /opt/ManualLayout/css/pandoc.css  --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML --metadata-file=/opt/ManualLayout/meta.yml --filter panflute $1 > $2
+pandoc -s -f markdown+smart -t html5 -c ./css/pandoc.css  --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML --metadata-file=/opt/ManualLayout/meta.yml --filter panflute $1 > $2
 echo "..."
 echo "Complete"

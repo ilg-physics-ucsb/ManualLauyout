@@ -6,7 +6,6 @@ def prepare(doc):
 
 def action(elem, doc):
     if isinstance(elem, pf.Div) and "GVideo" in elem.classes:
-        print("Inside")
         gvideo = elem
         file_id = gvideo.content[0].content[0].text
         video = """
@@ -15,8 +14,6 @@ def action(elem, doc):
         <figcaption>Video {1}
         </figure>
         """.format(file_id, doc.latest_video)
-        # parent.content[gvideo.index] = 
-        # gvideo = pf.convert_text(gvideo, input_format="html")
         gvideo = pf.RawBlock(video)
         doc.latest_video += 1
         return gvideo

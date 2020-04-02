@@ -10,6 +10,7 @@ RUN apt-get install -y git
 RUN useradd -rm -d /home/phys phys
 RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git
 RUN chmod +x /opt/ManualLayout/compile
+RUN cp -R /opt/ManualLayout/css /home/phys
 USER phys
 WORKDIR /home/phys
 RUN echo "export PATH=/opt/ManualLayout:$PATH" > ~/.bashrc
