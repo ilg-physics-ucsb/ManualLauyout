@@ -14,9 +14,10 @@ RUN pip3 install panflute
 # RUN apt-get install -y nano
 # RUN apt-get install -y git
 RUN useradd -rm -d /home/phys phys
-RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git && chmod +x /opt/ManualLayout/compile
+RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git && \
+    chmod +x /opt/ManualLayout/compile &&\
+    echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
 USER phys
-RUN echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc
 CMD ["/bin/bash"]
