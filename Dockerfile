@@ -21,4 +21,4 @@ RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git &&
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
 USER phys
-CMD ["/bin/bash"]
+CMD ["/bin/bash" , "if [ ! -f '.init' ]; then cp /opt/ManualLayout/.bashrc .bashrc && source .bashrc && touch .init; fi"]
