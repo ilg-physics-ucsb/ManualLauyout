@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ $# -eq 0 ]
+  then
+    echo "No argumnets supplied. Please give name of file to make"
+    exit 1
+fi
+
+touch $1
+
+mkdir -p css
+mkdir -p imgs
+cp /opt/ManualLayout/css/pandoc.css css/pandoc.css
+cp /opt/ManualLayout/.bashrc .bashrc
+source .bashrc

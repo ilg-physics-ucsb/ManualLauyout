@@ -16,6 +16,7 @@ RUN pip3 install panflute
 RUN useradd -rm -d /home/phys phys
 RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git && \
     chmod +x /opt/ManualLayout/compile &&\
+    chmod +x /opt/ManualLayout/setup &&\
     echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
