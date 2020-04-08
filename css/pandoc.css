@@ -17,22 +17,31 @@
   border: 0;
 }
 
+div.row{
+  display: flex;
+}
+
+div.column{
+  width: 50%;
+  padding: 5px;
+}
+
 div.Question {
   font-size: 14pt;
-  background: #047C91;
+  background: #4fb7ca;
   color: #FFFFFF;
   padding: 5px;
   border-top-style: solid;
   border-top-width: 5px;
-  border-top-color: #003660;
+  border-top-color: #265477;
 }
 
 div.QNumber {
   font-size: 18pt;
-  background: #047C91;
+  background: #4fb7ca;
   border-width: 5px;
   border-style: solid;
-  border-color: #003660;
+  border-color: #265477;
   color: #FFFFFF;
   padding: 5px;
   margin: 15px;
@@ -43,20 +52,20 @@ div.QNumber {
 
 div.Exercise {
   font-size: 14pt;
-  background: #EF5645;
+  background: #6e7cd2;
   color: #FFFFFF;
   padding: 5px;
   border-top-style: solid;
   border-top-width: 5px;
-  border-top-color: #C43424;
+  border-top-color: #3c4686;
 }
 
 div.ENumber {
   font-size: 18pt;
-  background: #EF5645;
+  background: #6e7cd2;
   border-width: 5px;
   border-style: solid;
-  border-color: #C43424;
+  border-color: #3c4686;
   color: #FFFFFF;
   padding: 5px;
   margin: 15px;

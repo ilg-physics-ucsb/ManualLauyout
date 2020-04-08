@@ -18,5 +18,5 @@ RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git &&
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
 USER phys
-RUN echo "export PATH=/opt/ManualLayout:$PATH" > ~/.bashrc
+RUN echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc
 CMD ["/bin/bash"]
