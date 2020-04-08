@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /opt/ManualLayout
+git pull
+if [ -e ~/.bashrc ]
+  then
+    cp ~/.bashrc /opt/ManuaLayout/.bashrc
+fi
+cd ~/
+echo "Update Complete"

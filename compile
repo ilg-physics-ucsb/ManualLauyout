@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ $# -ne 2]
+    then 
+        echo "Insufficient arguments. Argument one should be an existing markdown file and argument 2 is the name of the new .html file."
+        exit 1
 pandoc -s -f markdown+smart -t html5 -c ./css/pandoc.css  --mathjax=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML --metadata-file=/opt/ManualLayout/meta.yml --filter panflute $1 > $2
 echo "..."
 echo "Complete"
