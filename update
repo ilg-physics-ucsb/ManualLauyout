@@ -5,7 +5,7 @@ git pull
 chmod +x /opt/ManualLayout/compile
 chmod +x /opt/ManualLayout/setup
 chmod +x /opt/ManualLayout/update
-if [ ! -e ~/.bashrc ]
+if [ -e ~/.bashrc ]
   then
     cp ~/.bashrc /opt/ManualLayout/.bashrc
 fi

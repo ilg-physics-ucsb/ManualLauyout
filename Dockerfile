@@ -30,4 +30,4 @@ RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git &&
 WORKDIR /home/phys
 USER phys
 # "if [ ! -f '/home/phys/.init' ]; then \cp /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"
-CMD ["/bin/bash", "-c", "if [ ! -f '/home/phys/.init' ]; then yes | cp -rf /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"]
+CMD ["/bin/bash", "-c", "if [ ! -f '/home/phys/.init' ]; then echo 'copying profile' && yes | cp -rf /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"]
