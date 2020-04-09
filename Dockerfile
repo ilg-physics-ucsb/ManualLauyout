@@ -16,15 +16,15 @@ RUN pip3 install panflute
 RUN useradd -rm -d /home/phys phys && groupadd -g 417 docker && usermod -aG docker phys
 RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git && \
     echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc &&\
-    chmod +x /opt/ManualLayout/compile &&\
-    chmod +x /opt/ManualLayout/setup &&\
-    chmod +x /opt/ManualLayout/update &&\
     chown -R phys /opt/ManualLayout/.git &&\
     chown -R phys /opt/ManualLayout &&\
     chown -R .docker /opt/ManualLayout/.git &&\
     chown -R .docker /opt/ManualLayout &&\
     chmod 777 /opt/ManualLayout &&\
-    chmod g+s /opt/ManualLayout
+    chmod g+s /opt/ManualLayout &&\
+    chmod +x /opt/ManualLayout/compile &&\
+    chmod +x /opt/ManualLayout/setup &&\
+    chmod +x /opt/ManualLayout/update
     # find /opt/ManualLayout -type d -exec chmod -R {} g+s \;
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
