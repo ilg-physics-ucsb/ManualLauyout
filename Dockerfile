@@ -15,12 +15,17 @@ RUN pip3 install panflute
 # RUN apt-get install -y git
 RUN useradd -rm -d /home/phys phys
 RUN cd /opt && git clone https://github.com/ilg-physics-ucsb/ManualLayout.git && \
+    echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc &&\
     chmod +x /opt/ManualLayout/compile &&\
     chmod +x /opt/ManualLayout/setup &&\
     chmod +x /opt/ManualLayout/update &&\
-    echo "export PATH=/opt/ManualLayout:$PATH" > /opt/ManualLayout/.bashrc
+    chown -R phys /opt/ManualLayout/.git &&\
+    chown -R phys /opt/ManualLayout &&\
+    chmod 777 /opt/ManualLayout &&\
+    chmod g+s /opt/ManualLayout
+    # find /opt/ManualLayout -type d -exec chmod -R {} g+s \;
 # RUN chmod +x /opt/ManualLayout/compile
 WORKDIR /home/phys
 USER phys
-# "if [ ! -f '.init' ]; then cp /opt/ManualLayout/.bashrc .bashrc && source .bashrc && touch .init; fi"
-CMD ["/bin/bash", "-c", "if [ ! -f '/home/phys/.init' ]; then cp /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"]
+# "if [ ! -f '/home/phys/.init' ]; then \cp /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"
+CMD ["/bin/bash", "-c", "if [ ! -f '/home/phys/.init' ]; then yes | cp -rf /opt/ManualLayout/.bashrc /home/phys/.bashrc && source /home/phys/.bashrc && touch /home/phys/.init; fi; /bin/bash"]
