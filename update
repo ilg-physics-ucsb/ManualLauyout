@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /opt/ManualLayout
+git stash -a
 git pull
 if [ ! -e ~/.bashrc ]
   then
