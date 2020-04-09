@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -ne 2]
+if [ $# -ne 2 ]
     then 
         echo "Insufficient arguments. Argument one should be an existing markdown file and argument 2 is the name of the new .html file."
         exit 1
